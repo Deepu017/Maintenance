@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .logo img {
+            width: 300px;
+        }
+
+        /* Responsive Logo */
+        @media (max-width: 768px) {
+            .logo img {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 120px;
+            }
+        }
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+#countdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.time-section {
+    margin: 10px;
+    text-align: center;
+}
+
+.time-section span {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn i {
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.call-us {
+    background-color: #28a745;
+}
+
+.call-us:hover {
+    background-color: #218838;
+}
+
+.chat-with-us {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.chat-with-us:hover {
+    background-color: #e0a800;
+    color: #fff;
+}
+
+.mail-us {
+    background-color: #dc3545;
+}
+
+.mail-us:hover {
+    background-color: #c82333;
+}
+
+.contact-buttons a {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .time-section span {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .btn i {
+        font-size: 0.9rem;
+    }
+
+    .contact-buttons a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .time-section span {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        padding: 9px 13px;
+        font-size: 0.85rem;
+    }
+
+    .btn i {
+        font-size: 0.95rem;
+    }
+
+    .contact-buttons a {
+        font-size: 0.95rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="esdweblogo.png" alt="Company Logo">
+    </div>
+    <div class="container">
+        <div class="content">
+            <h1>We're Coming Soon</h1>
+            <p>Our website is under construction. We'll be here soon with our new awesome site.</p>
+            
+            <div id="countdown">
+                <div class="time-section">
+                    <span id="days"></span>
+                    <p>Days</p>
+                </div>
+                <div class="time-section">
+                    <span id="hours"></span>
+                    <p>Hours</p>
+                </div>
+                <div class="time-section">
+                    <span id="minutes"></span>
+                    <p>Minutes</p>
+                </div>
+                <div class="time-section">
+                    <span id="seconds"></span>
+                    <p>Seconds</p>
+                </div>
+            </div>
+            <div class="contact-buttons">
+                <a href="tel:+919032643081" class="btn call-us">
+                    <i class="fas fa-phone-alt"></i> Call Us
+                </a>
+                <a href="https://wa.me/9032643081" target="_blank" class="btn chat-with-us">
+                    <i class="fas fa-comments"></i> Chat with Us
+                </a>
+                <a href="mailto:info@example.com" class="btn mail-us">
+                    <i class="fas fa-envelope"></i> Mail Us
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+    <script>
+        // Countdown Timer
+const countdown = () => {
+    const countDate = new Date('Sep 31, 2024 12:00:00').getTime();
+    const now = new Date().getTime();
+    const gap = countDate - now;
+
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    const days = Math.floor(gap / day);
+    const hours = Math.floor((gap % day) / hour);
+    const minutes = Math.floor((gap % hour) / minute);
+    const seconds = Math.floor((gap % minute) / second);
+
+    document.getElementById('days').innerText = days;
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('seconds').innerText = seconds;
+};
+
+setInterval(countdown, 1000);
+
+
+// Add JS here
+    </script>
+</body>
+</html>
